@@ -23,7 +23,7 @@ public class BaseFragment extends Fragment
 		super.onAttach(context);
 		if ( context instanceof Activity )
 		{
-			controller= ( MainActivity ) context;
+			controller = ( MainActivity ) context;
 		}
 	}
 
@@ -88,5 +88,10 @@ public class BaseFragment extends Fragment
 	protected void init ()
 	{
 		isInited = true;
+	}
+
+    public void saveToSP ()
+	{
+
 	}
 }

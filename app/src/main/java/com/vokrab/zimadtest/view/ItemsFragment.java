@@ -14,6 +14,7 @@ import com.vokrab.zimadtest.model.ItemObject;
 import com.vokrab.zimadtest.model.ItemType;
 import com.vokrab.zimadtest.model.SimpleActionListener;
 import com.vokrab.zimadtest.model.ToDetailsItemObject;
+import com.vokrab.zimadtest.viewstate.ViewStateEnum;
 
 import java.util.List;
 
@@ -71,7 +72,7 @@ public class ItemsFragment extends BaseFragment implements RecyclerViewClickList
 
     public int getScrollPosition ()
     {
-        int result = 0;
+        int result = scrollPosition;
         if ( mLayoutManager != null )
         {
             result = mLayoutManager.findFirstCompletelyVisibleItemPosition ();
@@ -135,7 +136,6 @@ public class ItemsFragment extends BaseFragment implements RecyclerViewClickList
 //        Toast.makeText ( controller, "POSITION: " + item.getPosition (), Toast.LENGTH_SHORT ).show ();
         ZimadTestApplication app = ( ZimadTestApplication ) controller.getApplication ();
         app.setCommunicationObject ( item );
-        controller.showDetailsView ();
-
+        controller.setState ( ViewStateEnum.DETAILS );
     }
 }
